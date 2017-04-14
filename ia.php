@@ -273,242 +273,8 @@ class Individu{
 			}
 		}
 
-		//-------------------------------------------------------------------------------------//
-		//---------------------------------------TENAILLE--------------------------------------//
-		//-------------------------------------------------------------------------------------//
 
-		//LEFT TENAILLE
-		$lt_successifs = 0;
-		if($this->pos_y < 18 && $this->pos_x > 0 
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
-		{
-			$lt_successifs += 1;	// 1
-			if($this->pos_y < 18 && $this->pos_x > 0
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
-			{
-				$lt_successifs += 1;	// 2
-				if($this->pos_y < 18 && $this->pos_x > 0 
-				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
-				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
-				{
-					$lt_successifs += 1;	// 3
-				}
-			}
-		}
-
-		//RIGHT TENAILLE
-		$rt_successifs = 0;
-		if($this->pos_y < 18 && $this->pos_x > 0 
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
-		{
-			$rt_successifs += 1;	// 1
-			if($this->pos_y < 18 && $this->pos_x > 0
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
-			{
-				$rt_successifs += 1;	// 2
-				if($this->pos_y < 18 && $this->pos_x > 0 
-				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
-				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
-				{
-					$rt_successifs += 1;	// 3
-				}
-			}
-		}
-
-		//UP TENAILLE
-		$ut_successifs = 0;
-		if($this->pos_y < 18 && $this->pos_x > 0 
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
-		{
-			$ut_successifs += 1;	// 1
-			if($this->pos_y < 18 && $this->pos_x > 0
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
-			{
-				$ut_successifs += 1;	// 2
-				if($this->pos_y < 18 && $this->pos_x > 0 
-				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
-				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
-				{
-					$ut_successifs += 1;	// 3
-				}
-			}
-		}
-
-		//DOWN TENAILLE
-		$dt_successifs = 0;
-		if($this->pos_y < 18 && $this->pos_x > 0 
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
-		{
-			$dt_successifs += 1;	// 1
-			if($this->pos_y < 18 && $this->pos_x > 0
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
-			{
-				$dt_successifs += 1;	// 2
-				if($this->pos_y < 18 && $this->pos_x > 0 
-				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
-				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
-				{
-					$dt_successifs += 1;	// 3
-				}
-			}
-		}
-
-		//UP LEFT TENAILLE
-		$ult_successifs = 0;
-		if($this->pos_y < 18 && $this->pos_x > 0 
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
-		{
-			$ult_successifs += 1;	// 1
-			if($this->pos_y < 18 && $this->pos_x > 0
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
-			{
-				$ult_successifs += 1;	// 2
-				if($this->pos_y < 18 && $this->pos_x > 0 
-				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
-				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
-				{
-					$ult_successifs += 1;	// 3
-				}
-			}
-		}
-
-		//DOWN RIGHT TENAILLE
-		$drt_successifs = 0;
-		if($this->pos_y < 18 && $this->pos_x > 0 
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
-		{
-			$drt_successifs += 1;	// 1
-			if($this->pos_y < 18 && $this->pos_x > 0
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
-			{
-				$drt_successifs += 1;	// 2
-				if($this->pos_y < 18 && $this->pos_x > 0 
-				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
-				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
-				{
-					$drt_successifs += 1;	// 3
-				}
-			}
-		}
-
-		//UP RIGHT TENAILLE
-		$urt_successifs = 0;
-		if($this->pos_y < 18 && $this->pos_x > 0 
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
-		{
-			$urt_successifs += 1;	// 1
-			if($this->pos_y < 18 && $this->pos_x > 0
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
-			{
-				$urt_successifs += 1;	// 2
-				if($this->pos_y < 18 && $this->pos_x > 0 
-				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
-				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
-				{
-					$urt_successifs += 1;	// 3
-				}
-			}
-		}
-
-		//DOWN LEFT TENAILLE
-		$dlt_successifs = 0;
-		if($this->pos_y < 18 && $this->pos_x > 0 
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
-		{
-			$dlt_successifs += 1;	// 1
-			if($this->pos_y < 18 && $this->pos_x > 0
-			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
-			{
-				$dlt_successifs += 1;	// 2
-				if($this->pos_y < 18 && $this->pos_x > 0 
-				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
-				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
-				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
-				{
-					$dlt_successifs += 1;	// 3
-				}
-			}
-		}
-
-		//$left_tenaille_successifs = $lt_successifs;
-		$left_tenaille_poids = 0;
-		if ($lt_successifs == 3){
-			$left_tenaille_poids = 0.9;
-		}
-
-
-		//$right_tenaille_successifs = $rt_successifs;
-		$right_tenaille_poids = 0;
-		if ($rt_successifs == 3){
-				$right_tenaille_poids = 0.9;
-		}
-
-
-
-		//$up_tenaille_successifs = $ut_successifs;
-		$up_tenaille_poids = 0;
-		if ($ut_successifs == 3){
-				$up_tenaille_poids = 0.9;
-		}
-
-		
-		//$down_tenaille_successifs = $dt_successifs;
-		$down_tenaille_poids = 0;
-		if ($dt_successifs == 3){
-				$down_tenaille_poids = 0.9;
-		}
-
-		//$up_left_tenaille_successifs = $ult_successifs;
-		$up_left_tenaille_poids = 0;
-		if ($ult_successifs == 3){
-				$up_left_tenaille_poids = 0.9;
-		}
-
-
-		//$down_right_tenaille_successifs = $drt_successifs;
-		$down_right_tenaille_poids = 0;
-		if ($drt_successifs == 3){
-				$down_right_tenaille_poids = 0.9;
-		}
-
-
-
-		//$up_right_tenaille_successifs = $urt_successifs;
-		$up_right_tenaille_poids = 0;
-		if ($urt_successifs == 3){
-				$up_right_tenaille_poids = 0.9;
-		}
-
-		
-		//$down_left_tenaille_successifs = $dlt_successifs;
-		$down_left_tenaille_poids = 0;
-		if ($dlt_successifs == 3){
-				$down_left_tenaille_poids = 0.9;
-		}
-
-		//-------------------------------------------------------------------------------------//
-		//-------------------------------------------------------------------------------------//
-		//-------------------------------------------------------------------------------------//
-
-
-
-
-		$back_slash_successifs = $ul_successifs + $dr_successifs;
+				$back_slash_successifs = $ul_successifs + $dr_successifs;
 		$back_slash_poids = 0;
 		switch ($back_slash_successifs) {
 			case 0:
@@ -595,10 +361,458 @@ class Individu{
 				break;
 		}
 
+		//-------------------------------------------------------------------------------------//
+		//--------------------------------FAIRE DES TENAILLE-----------------------------------//
+		//-------------------------------------------------------------------------------------//
+
+		//LEFT TENAILLE
+		$lt_successifs = 0;
+		if($this->pos_x > 0 
+			&& $this->grid[$this->pos_y][$this->pos_x-1] == $this->adversaire)
+		{
+			$lt_successifs += 1;	// 1
+			if($this->pos_x > 0 
+			&& $this->grid[$this->pos_y][$this->pos_x-1] == $this->adversaire
+			&& $this->grid[$this->pos_y][$this->pos_x-2] == $this->adversaire)
+			{
+				$lt_successifs += 1;	// 2
+				if($this->pos_y > 0 
+				&& $this->grid[$this->pos_y][$this->pos_x-1] == $this->adversaire
+				&& $this->grid[$this->pos_y][$this->pos_x-2] == $this->adversaire
+				&& $this->grid[$this->pos_y][$this->pos_x-3] == $this->joueur)
+				{
+					$lt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//RIGHT TENAILLE
+		$rt_successifs = 0;
+		if($this->pos_x < 18 
+			&& $this->grid[$this->pos_y][$this->pos_x+1] == $this->adversaire)
+		{
+			$rt_successifs += 1;	// 1
+			if($this->pos_x < 18 
+			&& $this->grid[$this->pos_y][$this->pos_x+1] == $this->adversaire
+			&& $this->grid[$this->pos_y][$this->pos_x+2] == $this->adversaire)
+			{
+				$rt_successifs += 1;	// 2
+				if($this->pos_y < 18  
+				&& $this->grid[$this->pos_y][$this->pos_x+1] == $this->adversaire
+				&& $this->grid[$this->pos_y][$this->pos_x+2] == $this->adversaire
+				&& $this->grid[$this->pos_y][$this->pos_x+3] == $this->joueur)
+				{
+					$rt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//UP TENAILLE
+		$ut_successifs = 0;
+		if($this->pos_y > 0 
+			&& $this->grid[$this->pos_y-1][$this->pos_x] == $this->adversaire)
+		{
+			$ut_successifs += 1;	// 1
+			if($this->pos_y > 0 
+			&& $this->grid[$this->pos_y-1][$this->pos_x] == $this->adversaire
+			&& $this->grid[$this->pos_y-2][$this->pos_x] == $this->adversaire)
+			{
+				$ut_successifs += 1;	// 2
+				if($this->pos_y > 0  
+				&& $this->grid[$this->pos_y-1][$this->pos_x] == $this->adversaire
+				&& $this->grid[$this->pos_y-2][$this->pos_x] == $this->adversaire
+				&& $this->grid[$this->pos_y-3][$this->pos_x] == $this->joueur)
+				{
+					$ut_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//DOWN TENAILLE
+		$dt_successifs = 0;
+		if($this->pos_y < 18 
+			&& $this->grid[$this->pos_y+1][$this->pos_x] == $this->adversaire)
+		{
+			$dt_successifs += 1;	// 1
+			if($this->pos_y < 18 
+			&& $this->grid[$this->pos_y+1][$this->pos_x] == $this->adversaire
+			&& $this->grid[$this->pos_y+2][$this->pos_x] == $this->adversaire)
+			{
+				$dt_successifs += 1;	// 2
+				if($this->pos_y < 18  
+				&& $this->grid[$this->pos_y+1][$this->pos_x] == $this->adversaire
+				&& $this->grid[$this->pos_y+2][$this->pos_x] == $this->adversaire
+				&& $this->grid[$this->pos_y+3][$this->pos_x] == $this->joueur)
+				{
+					$dt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//UP LEFT TENAILLE
+		$ult_successifs = 0;
+		if($this->pos_y > 0 && $this->pos_x > 0 
+			&& $this->grid[$this->pos_y+1][$this->pos_x-1] == $this->adversaire)
+		{
+			$ult_successifs += 1;	// 1
+			if($this->pos_y > 0 && $this->pos_x > 0 
+			&& $this->grid[$this->pos_y+1][$this->pos_x-1] == $this->adversaire
+			&& $this->grid[$this->pos_y+2][$this->pos_x-2] == $this->adversaire)
+			{
+				$ult_successifs += 1;	// 2
+				if($this->pos_y > 0 && $this->pos_x > 0  
+				&& $this->grid[$this->pos_y+1][$this->pos_x-1] == $this->adversaire
+				&& $this->grid[$this->pos_y+2][$this->pos_x-2] == $this->adversaire
+				&& $this->grid[$this->pos_y+3][$this->pos_x-3] == $this->joueur)
+				{
+					$ult_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//DOWN RIGHT TENAILLE
+		$drt_successifs = 0;
+		if($this->pos_y < 18 && $this->pos_x < 18 
+			&& $this->grid[$this->pos_y-1][$this->pos_x+1] == $this->adversaire)
+		{
+			$drt_successifs += 1;	// 1
+			if($this->pos_y < 18 && $this->pos_x < 18
+			&& $this->grid[$this->pos_y-1][$this->pos_x+1] == $this->adversaire
+			&& $this->grid[$this->pos_y-2][$this->pos_x+2] == $this->adversaire)
+			{
+				$drt_successifs += 1;	// 2
+				if($this->pos_y < 18 && $this->pos_x < 18 
+				&& $this->grid[$this->pos_y-1][$this->pos_x+1] == $this->adversaire
+				&& $this->grid[$this->pos_y-2][$this->pos_x+2] == $this->adversaire
+				&& $this->grid[$this->pos_y-3][$this->pos_x+3] == $this->joueur)
+				{
+					$drt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//UP RIGHT TENAILLE
+		$urt_successifs = 0;
+		if($this->pos_y > 0 && $this->pos_x < 18 
+			&& $this->grid[$this->pos_y+1][$this->pos_x+1] == $this->adversaire)
+		{
+			$urt_successifs += 1;	// 1
+			if($this->pos_y > 0 && $this->pos_x < 18 
+			&& $this->grid[$this->pos_y+1][$this->pos_x+1] == $this->adversaire
+			&& $this->grid[$this->pos_y+2][$this->pos_x+2] == $this->adversaire)
+			{
+				$urt_successifs += 1;	// 2
+				if($this->pos_y > 0 && $this->pos_x < 18  
+				&& $this->grid[$this->pos_y+1][$this->pos_x+1] == $this->adversaire
+				&& $this->grid[$this->pos_y+2][$this->pos_x+2] == $this->adversaire
+				&& $this->grid[$this->pos_y+3][$this->pos_x+3] == $this->joueur)
+				{
+					$urt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//DOWN LEFT TENAILLE
+		$dlt_successifs = 0;
+		if($this->pos_y < 18 && $this->pos_x > 0 
+			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire)
+		{
+			$dlt_successifs += 1;	// 1
+			if($this->pos_y < 18 && $this->pos_x > 0
+			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
+			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire)
+			{
+				$dlt_successifs += 1;	// 2
+				if($this->pos_y < 18 && $this->pos_x > 0 
+				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->adversaire
+				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->adversaire
+				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->joueur)
+				{
+					$dlt_successifs += 1;	// 3
+				}
+			}
+		}
+
+
+		$left_tenaille_poids = 0;
+		if ($lt_successifs == 3){
+				$left_tenaille_poids = 0.4;
+		}
+
+
+		$right_tenaille_poids = 0;
+		if ($rt_successifs == 3){
+				$right_tenaille_poids = 0.4;
+		}
+
+
+		$up_tenaille_poids = 0;
+		if ($ut_successifs == 3){
+				$up_tenaille_poids = 0.4;
+		}
+
+		
+		$down_tenaille_poids = 0;
+		if ($dt_successifs == 3){
+				$down_tenaille_poids = 0.4;
+		}
+
+		$up_left_tenaille_poids = 0;
+		if ($ult_successifs == 3){
+				$up_left_tenaille_poids = 0.4;
+		}
+
+
+		$down_right_tenaille_poids = 0;
+		if ($drt_successifs == 3){
+				$down_right_tenaille_poids = 0.4;
+		}
+
+
+
+		$up_right_tenaille_poids = 0;
+		if ($urt_successifs == 3){
+				$up_right_tenaille_poids = 0.4;
+		}
+
+		
+		$down_left_tenaille_poids = 0;
+		if ($dlt_successifs == 3){
+				$down_left_tenaille_poids = 0.4;
+		}
+
+		//-------------------------------------------------------------------------------------//
+		//-------------------------------------------------------------------------------------//
+		//-------------------------------------------------------------------------------------//
+
+
+		//-------------------------------------------------------------------------------------//
+		//--------------------------------STOP LES TENAILLE-----------------------------------//
+		//-------------------------------------------------------------------------------------//
+
+		//LEFT TENAILLE
+		$slt_successifs = 0;
+		if($this->pos_x > 0 
+			&& $this->grid[$this->pos_y][$this->pos_x-1] == $this->joueur)
+		{
+			$slt_successifs += 1;	// 1
+			if($this->pos_x > 0 
+			&& $this->grid[$this->pos_y][$this->pos_x-1] == $this->joueur
+			&& $this->grid[$this->pos_y][$this->pos_x-2] == $this->joueur)
+			{
+				$slt_successifs += 1;	// 2
+				if($this->pos_y > 0 
+				&& $this->grid[$this->pos_y][$this->pos_x-1] == $this->joueur
+				&& $this->grid[$this->pos_y][$this->pos_x-2] == $this->joueur
+				&& $this->grid[$this->pos_y][$this->pos_x-3] == $this->adversaire)
+				{
+					$slt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//RIGHT TENAILLE
+		$srt_successifs = 0;
+		if($this->pos_x < 18 
+			&& $this->grid[$this->pos_y][$this->pos_x+1] == $this->joueur)
+		{
+			$srt_successifs += 1;	// 1
+			if($this->pos_x < 18 
+			&& $this->grid[$this->pos_y][$this->pos_x+1] == $this->joueur
+			&& $this->grid[$this->pos_y][$this->pos_x+2] == $this->joueur)
+			{
+				$srt_successifs += 1;	// 2
+				if($this->pos_y < 18  
+				&& $this->grid[$this->pos_y][$this->pos_x+1] == $this->joueur
+				&& $this->grid[$this->pos_y][$this->pos_x+2] == $this->joueur
+				&& $this->grid[$this->pos_y][$this->pos_x+3] == $this->adversaire)
+				{
+					$srt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//UP TENAILLE
+		$sut_successifs = 0;
+		if($this->pos_y > 0 
+			&& $this->grid[$this->pos_y-1][$this->pos_x] == $this->joueur)
+		{
+			$sut_successifs += 1;	// 1
+			if($this->pos_y > 0 
+			&& $this->grid[$this->pos_y-1][$this->pos_x] == $this->joueur
+			&& $this->grid[$this->pos_y-2][$this->pos_x] == $this->joueur)
+			{
+				$sut_successifs += 1;	// 2
+				if($this->pos_y > 0  
+				&& $this->grid[$this->pos_y-1][$this->pos_x] == $this->joueur
+				&& $this->grid[$this->pos_y-2][$this->pos_x] == $this->joueur
+				&& $this->grid[$this->pos_y-3][$this->pos_x] == $this->adversaire)
+				{
+					$sut_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//DOWN TENAILLE
+		$sdt_successifs = 0;
+		if($this->pos_y < 18 
+			&& $this->grid[$this->pos_y+1][$this->pos_x] == $this->joueur)
+		{
+			$sdt_successifs += 1;	// 1
+			if($this->pos_y < 18 
+			&& $this->grid[$this->pos_y+1][$this->pos_x] == $this->joueur
+			&& $this->grid[$this->pos_y+2][$this->pos_x] == $this->joueur)
+			{
+				$sdt_successifs += 1;	// 2
+				if($this->pos_y < 18  
+				&& $this->grid[$this->pos_y+1][$this->pos_x] == $this->joueur
+				&& $this->grid[$this->pos_y+2][$this->pos_x] == $this->joueur
+				&& $this->grid[$this->pos_y+3][$this->pos_x] == $this->adversaire)
+				{
+					$sdt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//UP LEFT TENAILLE
+		$sult_successifs = 0;
+		if($this->pos_y > 0 && $this->pos_x > 0 
+			&& $this->grid[$this->pos_y+1][$this->pos_x-1] == $this->joueur)
+		{
+			$sult_successifs += 1;	// 1
+			if($this->pos_y > 0 && $this->pos_x > 0 
+			&& $this->grid[$this->pos_y+1][$this->pos_x-1] == $this->joueur
+			&& $this->grid[$this->pos_y+2][$this->pos_x-2] == $this->joueur)
+			{
+				$sult_successifs += 1;	// 2
+				if($this->pos_y > 0 && $this->pos_x > 0  
+				&& $this->grid[$this->pos_y+1][$this->pos_x-1] == $this->joueur
+				&& $this->grid[$this->pos_y+2][$this->pos_x-2] == $this->joueur
+				&& $this->grid[$this->pos_y+3][$this->pos_x-3] == $this->adversaire)
+				{
+					$sult_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//DOWN RIGHT TENAILLE
+		$sdrt_successifs = 0;
+		if($this->pos_y < 18 && $this->pos_x < 18 
+			&& $this->grid[$this->pos_y-1][$this->pos_x+1] == $this->joueur)
+		{
+			$sdrt_successifs += 1;	// 1
+			if($this->pos_y < 18 && $this->pos_x < 18
+			&& $this->grid[$this->pos_y-1][$this->pos_x+1] == $this->joueur
+			&& $this->grid[$this->pos_y-2][$this->pos_x+2] == $this->joueur)
+			{
+				$sdrt_successifs += 1;	// 2
+				if($this->pos_y < 18 && $this->pos_x < 18 
+				&& $this->grid[$this->pos_y-1][$this->pos_x+1] == $this->joueur
+				&& $this->grid[$this->pos_y-2][$this->pos_x+2] == $this->joueur
+				&& $this->grid[$this->pos_y-3][$this->pos_x+3] == $this->adversaire)
+				{
+					$sdrt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//UP RIGHT TENAILLE
+		$surt_successifs = 0;
+		if($this->pos_y > 0 && $this->pos_x < 18 
+			&& $this->grid[$this->pos_y+1][$this->pos_x+1] == $this->joueur)
+		{
+			$surt_successifs += 1;	// 1
+			if($this->pos_y > 0 && $this->pos_x < 18 
+			&& $this->grid[$this->pos_y+1][$this->pos_x+1] == $this->joueur
+			&& $this->grid[$this->pos_y+2][$this->pos_x+2] == $this->joueur)
+			{
+				$surt_successifs += 1;	// 2
+				if($this->pos_y > 0 && $this->pos_x < 18  
+				&& $this->grid[$this->pos_y+1][$this->pos_x+1] == $this->joueur
+				&& $this->grid[$this->pos_y+2][$this->pos_x+2] == $this->joueur
+				&& $this->grid[$this->pos_y+3][$this->pos_x+3] == $this->adversaire)
+				{
+					$surt_successifs += 1;	// 3
+				}
+			}
+		}
+
+		//DOWN LEFT TENAILLE
+		$sdlt_successifs = 0;
+		if($this->pos_y < 18 && $this->pos_x > 0 
+			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->joueur)
+		{
+			$sdlt_successifs += 1;	// 1
+			if($this->pos_y < 18 && $this->pos_x > 0
+			&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->joueur
+			&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->joueur)
+			{
+				$sdlt_successifs += 1;	// 2
+				if($this->pos_y < 18 && $this->pos_x > 0 
+				&& $this->grid[$this->pos_y-1][$this->pos_x-1] == $this->joueur
+				&& $this->grid[$this->pos_y-2][$this->pos_x-2] == $this->joueur
+				&& $this->grid[$this->pos_y-3][$this->pos_x-3] == $this->adversaire)
+				{
+					$sdlt_successifs += 1;	// 3
+				}
+			}
+		}
+
+
+		$sleft_tenaille_poids = 0;
+		if ($slt_successifs == 3){
+				$sleft_tenaille_poids = 0.6;
+		}
+
+
+		$sright_tenaille_poids = 0;
+		if ($srt_successifs == 3){
+				$sright_tenaille_poids = 0.6;
+		}
+
+
+		$sup_tenaille_poids = 0;
+		if ($sut_successifs == 3){
+				$sup_tenaille_poids = 0.6;
+		}
+
+		
+		$sdown_tenaille_poids = 0;
+		if ($sdt_successifs == 3){
+				$sdown_tenaille_poids = 0.6;
+		}
+
+		$sup_left_tenaille_poids = 0;
+		if ($sult_successifs == 3){
+				$sup_left_tenaille_poids = 0.6;
+		}
+
+
+		$sdown_right_tenaille_poids = 0;
+		if ($sdrt_successifs == 3){
+				$sdown_right_tenaille_poids = 0.6;
+		}
+
+
+
+		$sup_right_tenaille_poids = 0;
+		if ($surt_successifs == 3){
+				$sup_right_tenaille_poids = 0.6;
+		}
+
+		
+		$sdown_left_tenaille_poids = 0;
+		if ($sdlt_successifs == 3){
+				$sdown_left_tenaille_poids = 0.6;
+		}
+
+		//-------------------------------------------------------------------------------------//
+		//-------------------------------------------------------------------------------------//
+		//-------------------------------------------------------------------------------------//
 
 		
 
-		$poids = [$horizontal_poids, $vertical_poids, $slash_poids, $back_slash_poids, $left_tenaille_poids, $right_tenaille_poids, $up_tenaille_poids, $down_tenaille_poids, $up_left_tenaille_poids, $down_right_tenaille_poids, $up_right_tenaille_poids, $down_left_tenaille_poids];
+		$poids = [$horizontal_poids, $vertical_poids, $slash_poids, $back_slash_poids, $left_tenaille_poids, $right_tenaille_poids, $up_tenaille_poids, $down_tenaille_poids, $up_left_tenaille_poids, $down_right_tenaille_poids, $up_right_tenaille_poids, $down_left_tenaille_poids, $sleft_tenaille_poids, $sright_tenaille_poids, $sup_tenaille_poids, $sdown_tenaille_poids, $sup_left_tenaille_poids, $sdown_right_tenaille_poids, $sup_right_tenaille_poids, $sdown_left_tenaille_poids];
 		$this->poids = max($poids);
 	}
 
@@ -727,17 +941,41 @@ class IA{
 			return $resultat;
 		} else {
 			$pos = Array();
+			if ($grid[8][6] == 0) {
+				$pos[] = "8/6";
+			}
 			if ($grid[9][6] == 0) {
 				$pos[] = "9/6";
+			}
+			if ($grid[10][7] == 0) {
+				$pos[] = "10/6";
+			}
+			if ($grid[8][12] == 0) {
+				$pos[] = "8/12";
 			} 
 			if ($grid[9][12] == 0) {
 				$pos[] = "9/12";
 			}
+			if ($grid[10][12] == 0) {
+				$pos[] = "10/12";
+			}
+			if ($grid[6][8] == 0) {
+				$pos[] = "6/8";
+			}
 			if ($grid[6][9] == 0) {
 				$pos[] = "6/9";
 			}
+			if ($grid[6][10] == 0) {
+				$pos[] = "6/10";
+			}
+			if ($grid[12][8] == 0) {
+				$pos[] = "12/8";
+			}
 			if ($grid[12][9] == 0) {
 				$pos[] = "12/9";
+			}
+			if ($grid[12][10] == 0) {
+				$pos[] = "12/10";
 			}
 			$i = rand(0, count($pos)-1);
 			return $pos[$i];

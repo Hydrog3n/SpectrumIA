@@ -35,23 +35,32 @@ function play($idJoueur, $numJoueur, $urlWebservice) {
         $game = json_decode($infos);
     }
     
+    
     if (!$game->finPartie && $game->status) {
         $patient = true;
         echo "C'est à mon tour de jouer !! \n";
-        $pos = IA::play($game->tableau, $numJoueur, $game->numTour);
+
+        if ($numJoueur == 1) {
+            $nbTenaille = $game->nbTenaillesJ1;
+            $nbTenailleAdv = $game->nbTenaillesJ2;
+        } else {
+            $nbTenaille = $game->nbTenaillesJ2;
+            $nbTenailleAdv = $game->nbTenaillesJ1;
+        }
+
+        $pos = IA::play($game->tableau, $numJoueur, $game->numTour, $nbTenailleAdv, $nbTenaille);
         
         echo "J'ai joué la position $pos \n";
         $response = json_decode(file_get_contents($urlWebservice.'/play/'.$pos.'/'.$idJoueur));
         
-        sleep(2);
+        sleep(1);
         play($idJoueur, $numJoueur, $urlWebservice);
 
     } else if (!$game->finPartie) {
-        if ($patient) {
-            echo "Je patiente pour jouer !! \n";
-            $patient = false;
-        }
-        sleep(2);
+        
+        echo "Je patiente pour jouer !! \n";
+        
+        sleep(1);
         play($idJoueur, $numJoueur, $urlWebservice);
     } 
     print_r($game->detailFinPartie);
